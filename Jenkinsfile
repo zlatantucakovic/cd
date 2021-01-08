@@ -37,7 +37,7 @@ pipeline {
 		stage('Deploy image'){
 			agent{ label 'master' }
 			steps{
-				sh 'cd newfolder'
+//				sh 'cd newfolder'
 				sh 'kubectl config view'
 				sh 'kubectl apply -f myweb.yaml'
 			}
