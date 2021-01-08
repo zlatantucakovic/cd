@@ -31,7 +31,7 @@ pipeline {
 			steps{
 				script{
 					docker.withRegistry(registry) {
-						dockerImage2 = docker.image("jovan:latest")
+						dockerImage2 = docker.image("nginx:latest")
 						dockerImage2.pull()
 					}
 				} 
@@ -41,7 +41,7 @@ pipeline {
 		stage('Deploy image'){
 			agent{ label 'master' }
 			steps{
-				sh 'cd newfolder'
+				//sh 'cd newfolder'
 				sh 'kubectl config view'
 				sh 'kubectl apply -f myweb.yaml'
 			}
