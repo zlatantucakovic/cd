@@ -21,7 +21,7 @@ pipeline {
 				}
 			}
 		}
-
+/*
 		stage('Pull image') {
 			agent{ label 'master' }
 			steps{
@@ -42,5 +42,6 @@ pipeline {
 				sh 'kubectl apply -f myweb.yaml'
 			}
 		}
+		*/
 	}	
 }
