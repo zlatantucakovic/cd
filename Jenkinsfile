@@ -15,7 +15,7 @@ pipeline {
 		stage('Push image') {
 			agent{ label 'master' }
 			steps{
-				sh 
+				 
 				script{
 					docker.withRegistry(registry) {
 						dockerImage = docker.image("nginx:latest")
@@ -25,7 +25,7 @@ pipeline {
 				}
 			}
 		}
-/*
+
 		stage('Pull image') {
 			agent{ label 'master' }
 			steps{
@@ -46,6 +46,6 @@ pipeline {
 				sh 'kubectl apply -f myweb.yaml'
 			}
 		}
-		*/
+		
 	}	
 }
