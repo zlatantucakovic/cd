@@ -15,9 +15,10 @@ pipeline {
 		stage('Push image') {
 			agent{ label 'master' }
 			steps{
+				sh 
 				script{
 					docker.withRegistry(registry) {
-						dockerImage = docker.build ("jovan")
+						dockerImage = docker.image("nginx:latest")
 						dockerImage.push("${env.BUILD_NUMBER}")
 						dockerImage.push("latest")
 					}
