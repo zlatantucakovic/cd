@@ -42,6 +42,8 @@ pipeline {
 			agent{ label 'master' }
 			steps{
 				//sh 'cd newfolder'
+				sh 'pwd'
+				sh 'ls'
 				sh 'kubectl config view'
 				sh 'kubectl apply -f myweb.yaml'
 			}
