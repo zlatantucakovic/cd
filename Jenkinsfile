@@ -12,10 +12,17 @@ pipeline {
 	agent none
 	
 	stages {
+		stage('Pull image from Docker Hub') {
+			agent{ label 'master' }
+			steps{
+				sh 'docker pull nginx:latest' 
+			}
+		}
+
 		stage('Push image') {
 			agent{ label 'master' }
 			steps{
-				 
+				sh 'docker pull nginx:latest' 
 				script{
 					docker.withRegistry(registry) {
 						dockerImage = docker.image("nginx:latest")
