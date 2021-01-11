@@ -42,6 +42,7 @@ pipeline {
 			agent{ label 'master' }
 			steps{
 				//sh 'cd newfolder'
+				sh 'cp /home/kub/newfolder/myweb.yaml /var/lib/jenkins/workspace/cdPipeline/myweb.yaml'
 				sh 'pwd'
 				sh 'ls'
 				sh 'kubectl config view'
