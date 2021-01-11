@@ -47,6 +47,7 @@ pipeline {
 				sh 'ls'
 				sh 'kubectl config view'
 				sh 'kubectl apply -f myweb.yaml'
+				sh 'rm myweb.yaml'
 			}
 		}
 		
