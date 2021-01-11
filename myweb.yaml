@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: nginx:1.19.6
+      - image: nginx:1.19.5
         imagePullPolicy: Always
         name: myweb
 
