@@ -42,7 +42,7 @@ pipeline {
 			agent{ label 'master' }
 			steps{
 				//sh 'cd newfolder'
-				sh 'cp /home/kub/newfolder/myweb.yaml $pwd/myweb.yaml'
+				sh 'cp /home/kub/newfolder/myweb.yaml $(pwd)/myweb.yaml'
 				sh 'pwd'
 				sh 'ls'
 				sh 'kubectl config view'
