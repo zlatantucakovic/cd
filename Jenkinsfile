@@ -50,7 +50,7 @@ pipeline {
 				//sh 'cd newfolder'
 				//sh 'cp /home/kub/newfolder/myweb.yaml $(pwd)/myweb.yaml'
 				sh 'pwd'
-				sh 'cd /home/root/newfolder'
+				sh 'cd /root/newfolder'
 				sh 'pwd'
 				sh 'ls'
 				sh 'kubectl config view'
