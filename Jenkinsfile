@@ -22,7 +22,6 @@ pipeline {
 		stage('Push image') {
 			agent{ label 'master' }
 			steps{
-				sh 'docker pull nginx:latest' 
 				script{
 					docker.withRegistry(registry) {
 						dockerImage = docker.image("nginx:latest")
