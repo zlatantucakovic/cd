@@ -22,12 +22,14 @@ pipeline {
 		stage('Push image') {
 			agent{ label 'master' }
 			steps{
+				sh 'curl -X GET 128.131.58.63:5000/v2/nginx/tags/list'
 				script{
 					docker.withRegistry(registry) {
 						dockerImage = docker.image("nginx:latest")
 						dockerImage.push("${env.BUILD_NUMBER}")
 						dockerImage.push("latest")
 					}
+				sh 'curl -X GET 128.131.58.63:5000/v2/nginx/tags/list'
 				}
 			}
 		}
