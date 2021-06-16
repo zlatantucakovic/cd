@@ -16,7 +16,7 @@ spec:
         app: myweb
     spec:
       containers:
-      - image: 128.131.58.63:5000/nginx:latest
+      - image: nginx:latest
         imagePullPolicy: Always
         name: myweb
 
