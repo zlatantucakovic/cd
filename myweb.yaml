@@ -17,7 +17,6 @@ spec:
     spec:
       containers:
       - image: nginx:latest
-        imagePullPolicy: Always
         name: myweb
 
 ---
